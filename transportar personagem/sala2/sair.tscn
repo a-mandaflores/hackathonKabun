@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://mlg2q6405kli"]
+
+[ext_resource type="Texture2D" uid="uid://bafjqqdluj5k0" path="res://casas/terrain/terrain/assets/TopDownHouse_SmallItems.png" id="1_503cb"]
+[ext_resource type="Script" path="res://transportar personagem/sala2/sair.gd" id="1_mva5r"]
+[ext_resource type="Texture2D" uid="uid://dckqfenkvbfoy" path="res://casas/terrain/terrain/assets/TopDownHouse_FurnitureState2.png" id="2_i1vuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spkfr"]
+size = Vector2(176, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmnsy"]
+texture = ExtResource("1_503cb")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0365c"]
+texture = ExtResource("2_i1vuq")
+0:10/size_in_atlas = Vector2i(1, 2)
+0:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2mcog"]
+sources/0 = SubResource("TileSetAtlasSource_nmnsy")
+sources/1 = SubResource("TileSetAtlasSource_0365c")
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_mva5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-56, 0)
+shape = SubResource("RectangleShape2D_spkfr")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2mcog")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131071, 1, 10)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

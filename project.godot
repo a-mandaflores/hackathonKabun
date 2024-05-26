@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="hackathon"
-run/main_scene="res://telaInicial/scripts/lobby.tscn"
+run/main_scene="res://StartHere.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,13 +21,12 @@ Game="*res://chosePlayers/Globol/Game.gd"
 
 [display]
 
-window/size/viewport_width=540
-window/size/viewport_height=360
+window/size/viewport_width=1080
+window/size/viewport_height=720
 window/size/window_width_override=1080
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
-window/canvas_textures/default_texture_filter=1
 
 [input]
 
@@ -61,3 +60,4 @@ move_down={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.593888, 0.802166, 0.864034, 1)

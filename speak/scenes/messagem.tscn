@@ -314,37 +314,37 @@ script = ExtResource("1_l5rth")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 544.0
-offset_bottom = 368.0
+offset_right = 1104.0
+offset_bottom = 744.0
 color = Color(0.811765, 0.909804, 0.717647, 1)
 
 [node name="PlayerSelect" type="AnimatedSprite2D" parent="."]
-position = Vector2(232, 256)
-scale = Vector2(6.39844, 6.39844)
+position = Vector2(488, 528)
+scale = Vector2(7.97461, 7.97461)
 sprite_frames = SubResource("SpriteFrames_l3f6k")
 animation = &"play4"
 
 [node name="pular" type="Label" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 328.0
-offset_right = 528.0
-offset_bottom = 352.0
+offset_left = 968.0
+offset_top = 648.0
+offset_right = 1040.0
+offset_bottom = 678.0
 theme_override_colors/font_color = Color(0.991393, 0.294885, 0.629301, 1)
 theme_override_fonts/font = ExtResource("65_jsckt")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 24
 text = "Pular"
 autowrap_mode = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 40.0
-offset_right = 496.0
-offset_bottom = 144.0
+offset_left = 160.0
+offset_top = 104.0
+offset_right = 958.0
+offset_bottom = 296.0
 theme_override_colors/font_color = Color(0.991393, 0.294885, 0.629301, 1)
 theme_override_fonts/font = ExtResource("65_jsckt")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 36
 autowrap_mode = 2
 
 [node name="next_message" type="Timer" parent="."]
@@ -354,10 +354,10 @@ autowrap_mode = 2
 [node name="pularButton" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 472.0
-offset_top = 328.0
-offset_right = 536.0
-offset_bottom = 352.0
+offset_left = 944.0
+offset_top = 640.0
+offset_right = 1051.0
+offset_bottom = 680.0
 
 [connection signal="timeout" from="next_message" to="." method="_on_next_messagem_timeout"]
 [connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]

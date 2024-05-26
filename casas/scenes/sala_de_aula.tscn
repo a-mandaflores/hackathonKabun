@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dayjo7mu0yjpg"]
+
+[ext_resource type="PackedScene" uid="uid://b4dwy65msjmye" path="res://casas/mapa_interno.tscn" id="1_jr4uk"]
+[ext_resource type="PackedScene" uid="uid://jvxw8bmka6x2" path="res://transportar personagem/sala2/sair.tscn" id="2_fa2vc"]
+
+[node name="sala de aula" type="Node2D"]
+
+[node name="mapa_interno" parent="." instance=ExtResource("1_jr4uk")]
+position = Vector2(-80, -24)
+scale = Vector2(2.44, 2.24)
+
+[node name="sair" parent="." instance=ExtResource("2_fa2vc")]
+position = Vector2(608, 624)

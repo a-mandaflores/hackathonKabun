@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Character
 
 @export_category("variables")
 @export var _move_speed: float = 120.0
@@ -9,12 +10,13 @@ extends CharacterBody2D
 @onready var animation = $AnimationTree
 var _state_machine
 
+
 func _ready() -> void:
 	_state_machine = animation.get("parameters/playback")
 
 func _physics_process(_delta: float) -> void:
 	_move()
-	#_animate()
+	_animate()
 	move_and_slide()
 	
 
@@ -25,9 +27,9 @@ func _move() -> void:
 	)
 	
 	if  _direction != Vector2.ZERO:
-		#animation["parameters/idle/blend_position"] = _direction
-		#animation["parameters/walk/blend_position"] = _direction
-		#
+		animation["parameters/idle/blend_position"] = _direction
+		animation["parameters/walk/blend_position"] = _direction
+		
 		velocity.x = lerp(velocity.x, _direction.normalized().x * _move_speed, _acceleration)
 		velocity.y = lerp(velocity.y, _direction.normalized().y * _move_speed, _acceleration)
 		return 
@@ -41,8 +43,9 @@ func _move() -> void:
 func _animate() -> void:
 	if velocity.length() > 10:
 		_state_machine.travel("walk")
-	else:
-		_state_machine.travel("idle")
+	return
+	
+	_state_machine.travel("idle")
 	
 	
 		

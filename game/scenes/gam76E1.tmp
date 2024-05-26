@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://vcd5ce7cwtsb"]
+
+[ext_resource type="PackedScene" uid="uid://c3xw7lhv52dm8" path="res://personagem/scenes/character.tscn" id="1_2dvok"]
+[ext_resource type="PackedScene" uid="uid://b57dpoldvheuh" path="res://mapas/cenas/terreno.tscn" id="1_7k80m"]
+[ext_resource type="PackedScene" uid="uid://cc8vdxptb5lku" path="res://casas/terrain/scenes/objetos_internos.tscn" id="1_21ly0"]
+[ext_resource type="PackedScene" uid="uid://cnq4bueeb7kkn" path="res://cenarios/cenas/casas.tscn" id="3_3ecju"]
+[ext_resource type="PackedScene" uid="uid://m0ovi2hvh73t" path="res://transportar personagem/area_2d.tscn" id="5_kormd"]
+
+[node name="game" type="Node2D"]
+
+[node name="Terreno" parent="." instance=ExtResource("1_7k80m")]
+layer_0/tile_data = PackedInt32Array(786448, 0, 0)
+layer_1/name = "nuvens"
+layer_1/z_index = 10
+layer_1/tile_data = PackedInt32Array(-1048537, 4980749, 2, -458696, 6291469, 17, 1048640, 5242893, 39, 1900584, 3866637, 52, 2162682, 524301, 50, 1179619, 13, 29, -131096, 589837, 8, -917512, 2686989, 0, -1441779, 13, 29)
+
+[node name="TileMap" parent="." instance=ExtResource("1_21ly0")]
+
+[node name="Component" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Component" instance=ExtResource("5_kormd")]
+position = Vector2(-24, 128)
+scale = Vector2(0.990991, 0.833333)
+_teleport_position = Vector2(0, 0)
+
+[node name="Ysort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="character" parent="Ysort" instance=ExtResource("1_2dvok")]
+position = Vector2(328, 128)
+
+[node name="casas" parent="Ysort" instance=ExtResource("3_3ecju")]
+position = Vector2(48, 64)
+layer_0/name = "estrada"
+layer_0/tile_data = PackedInt32Array(1507349, 10, 0)
+layer_1/name = "casas"
+layer_1/y_sort_enabled = true
+layer_1/tile_data = PackedInt32Array(-655346, 0, 0, -131034, 1, 0, 65530, 2, 0, 131117, 8, 0, 327667, 7, 0, 65537, 9, 0)
+layer_2/name = "arvoresFundo"
+layer_2/y_sort_enabled = true
+layer_2/tile_data = PackedInt32Array(-786431, 5, 0, -983009, 5, 0, -131088, 5, 0)
+layer_3/name = "arvoresFrente"
+layer_3/y_sort_enabled = true
+layer_3/tile_data = PackedInt32Array(983039, 3, 0, 786475, 3, 0, 262192, 5, 0)
