@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtnhn5m4td8ft"]
-
-[ext_resource type="Texture2D" uid="uid://iteh6ejdge0n" path="res://personagem/assets/Character1F_1_pickup_ground_0.png" id="1_07mun"]
-
-[node name="Character1f1PickupGround0" type="Sprite2D"]
-position = Vector2(279, 172)
-texture = ExtResource("1_07mun")

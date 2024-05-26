@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3xw7lhv52dm8"]
+
+[ext_resource type="Script" path="res://personagem/scenes/character.gd" id="1_rfaad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmg5p"]
+
+[node name="character" type="CharacterBody2D"]
+script = ExtResource("1_rfaad")
+_move_speed = null
+_friction = null
+_acceleration = null
+
+[node name="collition" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mmg5p")

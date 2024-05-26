@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://dx84lhbdx25i0"]
+
+[ext_resource type="Texture2D" uid="uid://d3piq3qj52tbb" path="res://personagem/assets/question/play0/Character1F_1_talk_0.png" id="1_g6tik"]
+[ext_resource type="Texture2D" uid="uid://d173ykld7xngy" path="res://personagem/assets/question/play0/Character1F_1_talk_1.png" id="2_iv6nn"]
+[ext_resource type="Texture2D" uid="uid://ckvqtueitaq71" path="res://personagem/assets/question/play0/Character1F_1_talk_2.png" id="3_gfb8o"]
+[ext_resource type="Texture2D" uid="uid://ljku5osxwnnp" path="res://personagem/assets/question/play0/Character1F_1_talk_3.png" id="4_3c7lx"]
+[ext_resource type="Texture2D" uid="uid://ddy7scl1fkxhl" path="res://personagem/assets/question/play0/Character1F_1_talk_4.png" id="5_alasa"]
+[ext_resource type="Texture2D" uid="uid://dhsobxpmrlvpe" path="res://personagem/assets/question/play0/Character1F_1_talk_5.png" id="6_w56td"]
+[ext_resource type="Texture2D" uid="uid://xear1f6hsp76" path="res://personagem/assets/question/play0/Character1F_1_talk_6.png" id="7_kp8qg"]
+
+[sub_resource type="Animation" id="Animation_lc73y"]
+resource_name = "speak"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t27gl"]
+_data = {
+"speak": SubResource("Animation_lc73y")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxp25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g6tik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iv6nn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gfb8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3c7lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_alasa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w56td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kp8qg")
+}],
+"loop": true,
+"name": &"Player0",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[node name="character" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_t27gl")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 2
+offset_right = 536.0
+offset_bottom = 364.0
+color = Color(0.811765, 0.909804, 0.717647, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(247, 268)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_dxp25")
+animation = &"Player0"
+frame_progress = 0.753743
